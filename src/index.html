@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    _header.html
+</head>
+
+<body class="d-flex flex-column h-100">
+    <!-- This is to identify which page is loaded for the breadcrumbs -->
+    <span id="app-page" hidden></span>
+_navigation.html
+<!-- MAIN -->
+    <main class="flex-shrink-0 mt-5">
+       <div class="container col-xxl-8 px-4 py-5">
+           <div class="row g-5 py-5 row-cols-1 row-cols-lg-2">
+            <div class="col order-last order-lg-first">
+                <h1 class="display-5 fw-bold 1h-1 mb-3">Angles In Time</h1>
+                <h4 class="lead">Calculate the angle between the hands of a clock for any given time.</h4>
+                <ul class="fa-ul pt-2 checklist">
+                    <li><span class="fa-li"><i class="bi bi-check-square-fill me-2"></i></span>CSS SASS Bootstrap Node.js Layout</li>
+                    <li><span class="fa-li"><i class="bi bi-check-square-fill me-2"></i></span>Javascript Fundamentals</li>
+                    <li><span class="fa-li"><i class="bi bi-check-square-fill me-2"></i></span>Javascript Loops</li>
+                    <li><span class="fa-li"><i class="bi bi-check-square-fill me-2"></i></span>Javascript Functions</li>
+                    <li><span class="fa-li"><i class="bi bi-check-square-fill me-2"></i></span>Javascript Dom Manipulation</li>
+                    <li><span class="fa-li"><i class="bi bi-check-square-fill me-2"></i></span>Javascript If/Then/Else</li>
+                    <li><span class="fa-li"><i class="bi bi-check-square-fill me-2"></i></span>Javascript Boolean Logic</li>
+                </ul>
+                <div>
+                    <a type="button" class="btn btn-lg btn-actions px-4 me-md-2" href="app.html">Try It Out!</a>
+                </div>
+                <div class="fw-bold mt-5">
+                    <div class="d-flex">
+                        <div class="row row-cols-6 project-icons">
+                            <div class="col"><img src="assets/img/html5icon.svg"></div>
+                            <div class="col"><img src="assets/img/css3icon.svg"></div>
+                            <div class="col"><img src="assets/img/sassicon.svg"></div>
+                            <div class="col"><img src="assets/img/bootstrapicon.svg"></div>
+                            <div class="col"><img src="assets/img/jsicon.svg"></div>
+                            <div class="col"><img src="assets/img/nodejsicon.svg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <img src="assets/img/angles-in-time.svg" class="img-fluid center-block d-block mx-auto" width="700" height="500" alt="App Logo">
+            </div>
+           </div>
+       </div>
+    </main>
+<!-- END MAIN -->
+_footer.html
+<script>
+    document.querySelectorAll('.nav-link').forEach(item => {
+    item.classList.remove("active-link");
+  });
+  document.getElementById("home-link").classList.add("active-link");
+</script>
+</body>
+</html>

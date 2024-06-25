@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    _header.html
+  </head>
+
+  <body>
+    <!-- This is to identify which page is loaded for the breadcrumbs -->
+    <span id="app-page" hidden></span>
+     _navigation.html
+
+    <!-- MAIN -->
+    <main class="flex-shrink-0 mt-5">
+      <div class="container py-4 px-5 mt-5">
+        <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+        <div class="row row-cols-1 row-cols-lg-2">
+            <div class="col-lg-8">
+
+<!-- PRISM NOTE: The tabs and spacing here will be matched in the html page -->
+<pre class="line-numbers"><code class="language-javascript">
+    <!-- Inside this section, you have to replace all "<" with "&lt;" and sometimes ">" with "&gt;" -->
+
+// retreive the elements to be manipulated
+var results = document.getElementById("degrees");
+var hourValue = document.getElementById("hourValue");
+var minuteValue = document.getElementById("minuteValue");
+
+document.getElementById("btnSubmit").addEventListener("click",calculate);
+
+function calculate(){
+
+    // validate form values
+    if (hourValue.value &#60; 0 || hourValue.value > 23 || minuteValue.value &#60; 0 || minuteValue.value > 59)
+        {
+            alert("Please enter a valid time.")
+        }
+    
+    // convert 24 hour to 12 hour time
+    if (hourValue.value > 11)
+        {
+            hourValue.value = hourValue.value - 12;
+        }
+    
+    // The minute hand moves 6 degrees each minute:  360/60 = 6
+    var minuteAngle = minuteValue.value * 6;
+
+    // The hour hand moves 30 degrees each hour: 360/12 = 30
+    // The hour hand moves an addtional 6 degrees for
+    //     each addtional minute past the hour.
+    var hourAngle = (hourValue.value * 30) + (minuteAngle / 12);
+    
+
+    // return the angle between hour and minute hands
+    var angle = Math.abs(hourAngle - minuteAngle);
+
+    //return the inside angle
+    if (angle > 180)
+        {
+            angle = 360 - angle;
+        }
+
+    SetClockHands(hourAngle, minuteAngle);
+
+    results.innerHTML = angle;
+};
+
+// this method draws the clock hands to the time input in the page.
+function SetClockHands(hDeg, mDeg)
+{
+    var hourHand = document.getElementById("hourHand");
+    var minuteHand = document.getElementById("minHand");
+    
+    hourHand.style.transform  = `rotate(${hDeg + 90}deg)`
+    minHand.style.transform  = `rotate(${mDeg + 90}deg)`
+}
+    
+</code></pre>
+ <!-- END PRISM CODE BLOCK -->
+
+            </div>
+            <div class="col-lg-4"><h5>The code for this application is structured with two main functions.</h5>
+                <p>The first
+                  step is to get the necessary elements from the page that contain data or
+                  need to be manipulated, and the submit button is set to call the first
+                  "calculate()" function.
+                </p><br>
+                <p>The "calculate()" function holds the algorythm that calculates the inner angle
+                  between the hour and minute hands. It basically converts the minutes and hours
+                  into degrees, then takes the angle between 0 or 12 noon and the position of 
+                  each hand on the clock. It subracts the two to get the angle between the hands,
+                  then subtracts 360 degrees if the angle is greater than 180 degrees to get
+                  the inside or acute angle.
+                  </p><br>
+                <p>Finally the "SetClockHands()" method redraws the hands of the clock image
+                  to represent the time entered in the form.
+                </p><br>
+                <h5>Please <a href="https://www.davidbellerose.com/#contact" target="_blank" contact-link" alt="Contact Me">contact me</a> if you have any questions and/or would like to discuss
+                    my skill set and qualifications.
+                </h5>
+            </div>
+        </div>
+      </div>
+    </main>
+    <!-- END MAIN -->
+        
+    _footer.html
+    <script type="Javascript" src="/src/assets/vendor/prism/prism.js"></script>
+    <script>
+      document.querySelectorAll('.nav-link').forEach(item => {
+      item.classList.remove("active-link");
+    });
+    document.getElementById("code-link").classList.add("active-link");
+  </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+@use 'reset';
+@use 'colors';
+@use 'navigation';
+@use 'footer';
+@use 'fonts';
+@use 'clock';
+
+
+body{
+  color: var(--primary-color);
+}
+
+nav{
+  background-color: var(--nav-color);
+}
+
+
+h1,h2,h3,h4,h5,h6{
+  color: var(--primary-color);
+}
+
+main .container {
+  padding: 60px 15px 0;
+  margin-bottom: 5rem;
+}
+
+.checklist>li i{
+   color: var(--secondary-color);
+}
+
+.project-icons img{
+  height: 50px;
+  width: auto;
+}
+
+.btn-actions, .btn-actions:visited, .btn-actions:focus{
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-actions:hover{
+  color: var(--primary-color);
+  background-color: white;
+  border-color: var(--primary-color);
+}
+
+.contact-link{
+  color: blue !important;
+  text-decoration: none;
+}
+
+.contact-link:hover{
+  // color: var(--primary-color);
+  text-decoration: underline;
+}
+
+// prism custom css
+code[class*="language-"],
+pre[class*="language-"] {
+white-space: pre-wrap;
+word-break: normal;
+word-wrap: normal;
+}
+
+.instructions li{
+  list-style-type: disc;
+}
