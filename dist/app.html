@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Angles In Time: A Coding Project By David Bellerose</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link rel="stylesheet" href="assets/vendor/prism/prism.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link href="assets/img/dblogo.svg" rel="icon">
+  </head>
+
+  <body>
+    <!-- This is to identify which page is loaded for the breadcrumbs -->
+    <span id="app-page" hidden></span>
+    <!-- NAV  -->
+<nav class="navbar navbar-expand-md fixed-top">
+    <div class="container-fluid">
+            <img src="assets/img/dblogo.svg" height="25" class="d-inline-block align-text-top me-2">
+            <span class="text-white me-md-5">Angles In Time</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0 breadcrumb">
+                <li class="nav-item">
+                    <a id="home-link" class="nav-link active-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a id="app-link" class="nav-link" href="app.html">The App</a>
+                </li>
+                <li class="nav-item">
+                    <a id="code-link" class="nav-link" href="code.html">The Code</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://github.com/davidbellerose/ClockHandsAngle">Git Repo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://davidbellerose.com/#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://davidbellerose.com/#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href=" https://tattarrattat-asp-net-mvc.up.railway.app/">
+                        <img src="assets/img/go-to-c-sharp.webp" width="175"/>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+<!-- END NAV -->
+
+<!-- MAIN -->
+<main class="flex-shrink-0" style="margin-top:5rem;">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col-lg-6 border-end border-2">
+            <h1>Angles In Time:<br>A Coding Project</h1>
+            <h4 class="lead">This app returns the angle between the hour and minute hands on a clock.</h4>
+            <h2 class="mt-5 border-bottom border-3">Instructions</h2>
+            <p>
+              This application demonstrates the algorythm that calculates the inner angle between
+              the hour and minute hands for the clock time entered in the form. It converts the minutes
+              to degrees in relation to the clock circle for each clock hand, 12:00 being 0 degrees,
+              then the algorythm returns the inner or acute angle between the hour and minute hands.
+          </p>
+            <ul class="instructions">
+              <li>
+                  Enter the time for the hour hand in the hour field, between 0 and 23. 0:00 is midnight, or in military
+                  time referred to as zero hundred hours. You can use military time for the hour input.
+              </li>
+              <li>
+                  Enter the time for the minute hand in the minute field, between 0 and 59. 
+              </li>
+              <li>
+                  Click on the calculate button.
+              </li>
+              <li>
+                  The results message will give the inner or acute angle in degrees between the hour and minute hands.
+              </li>
+              <li>
+                  The clock image will refresh to show the time that was entered.
+              </li>
+            </ul>
+        </div>
+        <div class="col-lg-6">
+            <h5>Enter Values</h5>
+            <form class="row row-cols-1 row-cols-lg-2 gy-2 gx-3">
+                <div class="col">
+                    <label>Hour</label>
+                    <input id="hourValue" min="0" max="24" type="number" class="form-control" placeholder="" value="3" aria- label="Hour Value">
+                </div>
+                <div class="col">
+                    <label>Minute</label>
+                    <input id="minuteValue" min="0" max="59" type="number" class="form-control" placeholder="Minute Value" value="0" aria- label="Start Value">
+                </div>
+                <div class="col-12 col-lg-12 d-flex justify-content-start justify-content-lg-end">
+                    <button type="button" id="btnSubmit" class="btn btn-lg btn-actions">Calculate</button>
+                </div>
+            </form>
+            <h2 class="mt-5 border-bottom border-2">Results</h2>
+            <table class="table table-striped table-sm">
+                <tbody id="results">
+                <h4>The angle between the hour and minute hands is <strong id="degrees">0</strong> degrees.</h4>
+                </tbody>
+            </table>
+            <h5 id="codeLink"></h5>
+            <div class="clock">
+                <div class="inner-clock-face"></div>
+                <div class="hand hour-hand" id="hourHand"></div>
+                <div class="hand min-hand" id="minHand"></div>
+            </div>
+        </div>
+    </div>
+  </div>
+</main>
+<!-- END MAIN -->
+      <footer class="footer">
+    <div class="container">
+      <div class="social-links mt-3 text-center">
+        <a href="https://www.linkedin.com/in/david-bellerose" target="_blank" class="linkedin" ><i class="bi bi-linkedin" style="font-size:1.5rem"></i></a>
+        <a href="https://twitter.com/DavidEBellerose" target="_blank" class="twitter" ><i class="bi bi-twitter" style="font-size:1.5rem"></i></a>
+        <a href="https://github.com/davidbellerose" target="_blank" class="github"><i class="bi bi-github" style="font-size:1.5rem"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>David Bellerose</span></strong>
+        <a class="ms-2" href="https://davidbellerose.com/privacy.html" target="_blank">Privacy</a> |
+        <a class="ms-2" href="https://davidbellerose.com/terms.html" target="_blank">Terms & Conditions</a> |
+        <a class="ms-2" href="https://davidbellerose.com/cookies.html" target="_blank">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+<!-- END FOOTER --><!-- Scripts JS -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>    <script src="assets/vendor/prism/prism.js"></script>
+<script src="assets/js/main.js"></script>
+
+      <script>
+        document.querySelectorAll('.nav-link').forEach(item => {
+        item.classList.remove("active-link");
+      });
+      document.getElementById("app-link").classList.add("active-link");
+    </script>
+  </body>
+</html>
