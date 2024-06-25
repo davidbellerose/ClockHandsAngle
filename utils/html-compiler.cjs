@@ -21,24 +21,6 @@ if (!fs.existsSync("dist")) {
 }
 
 
-// copy html files that are not partials from src to dist
-fs.readdir("./src/", (err, files) => {
-  if (err) {
-    console.log(err);
-  } else {
-    files.forEach((file) => {
-      if (!file.startsWith("_") && file.endsWith(".html")) {
-        fs.copyFile("src/" + file, "dist/" + file, (err) => {
-          if (err) {
-            console.log("###  Error Found:", err);
-          }
-          console.log("==>  " + file + " copied");
-        });
-      }
-    });
-  }
-  getPartialData();
-});
 
 // get list of files in src directory that start with "_"(underscore) which are the partial files
 function getPartialData(){
@@ -93,3 +75,23 @@ function replaceIt(partial, partialData){
     }
   });
 }
+
+
+// copy html files that are not partials from src to dist
+fs.readdir("./src/", (err, files) => {
+  if (err) {
+    console.log(err);
+  } else {
+    files.forEach((file) => {
+      if (!file.startsWith("_") && file.endsWith(".html")) {
+        fs.copyFile("src/" + file, "dist/" + file, (err) => {
+          if (err) {
+            console.log("###  Error Found:", err);
+          }
+          console.log("==>  " + file + " copied");
+        });
+      }
+    });
+  }
+  getPartialData();
+});
